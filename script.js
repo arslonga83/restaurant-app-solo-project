@@ -1,6 +1,11 @@
 import { menuArray } from '/data.js'
 
-const menuContainer = document.querySelector('#menu-container');
+document.addEventListener('click', (e) => {
+  if (e.target.dataset.item) {
+    addMenuItem(e.target.dataset.item)
+  }
+})
+
 
 function getMenuHtml() {
   let menuHtml = ''
@@ -11,14 +16,23 @@ function getMenuHtml() {
       <div class="item-details">
         <h3>${item.name}</h3>
         <p>${item.ingredients}</p>
-        <h4>${item.price}</h4>
+        <h4>$${item.price}</h4>
       </div>
-      <button class="add-item-btn">+</button>
+      <button class="add-item-btn" data-item=${item.id}>+</button>
     </div>
     `
   })
   return menuHtml;
 }
+
+
+function addMenuItem(itemId) {
+  const menuItem = menuArray.filter((item) => {
+    return item.id == itemId
+  })[0]
+  console.log(menuItem)
+}
+
 
 function render() {
   const menuContainer = document.querySelector('#menu-container');
