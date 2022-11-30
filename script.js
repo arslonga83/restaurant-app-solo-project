@@ -78,7 +78,7 @@ function renderOrder() {
 }
 
 function openPaymentModal() {
-  document.querySelector('#payment-modal').style.display = 'inline-block'
+  document.querySelector('#payment-modal').style.display = 'flex'
 }
 
 
