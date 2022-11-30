@@ -12,19 +12,18 @@ body {
   background: lightgrey;
 }
 
+header, main {
+  width: 600px;
+  padding: 48px;
+}
+
 header {
   background: url('./assets/header-img.jpg') center;
   background-size: cover;
   background-repeat: no-repeat;
   height: 167px;
-  width: 600px;
-  padding: 48px;
   color: #FFFFFF;
   font-size: 1.75rem;
-}
-
-.header-description {
-  color: #FFFFFF;
 }
 
 main {
@@ -32,14 +31,20 @@ main {
   position: relative;
 }
 
+.header-description {
+  color: #FFFFFF;
+}
+
+p {
+  color: gray;  
+}
+
 .card {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 630px;
+  padding: 24px 0 24px;
   border-bottom: 1px solid lightgray;
-  margin: 16px;
-  padding: 16px;
 }
 
 .item-graphic {
@@ -49,18 +54,12 @@ main {
 
 .item-details {
   font-size: 1.25rem;
-  line-height: 2rem;
-}
-
-p {
-  color: gray;  
 }
 
 .add-item-btn {
   border: 1px solid gray;
   background: none;
   border-radius: 50%;
-  padding: 0;
   font-size: 2rem;
   height: 48px;
   width: 48px;
@@ -72,15 +71,9 @@ p {
   background: lightgray;
 }
 
-.order-container {
-  width: 600px;
-  text-align: center;
-  padding: 16px;
-  margin: 16px;
-}
-
 .order-title {
-  margin-bottom: 48px;
+  text-align: center;
+  padding: 48px 0 48px 0 ;
 }
 
 .order-line {
@@ -90,7 +83,7 @@ p {
   padding-bottom: 8px;
 }
 
-.remove-btn {
+.remove-btn, .order-btn{
   cursor: pointer;
 }
 
@@ -129,7 +122,6 @@ p {
   bottom: 0;
   left: 5%;
   right: 0;
-  border: 1px solid black;
   border-radius: 3px;
   box-shadow: 5.18654px 5.18654px 255.437px rgba(0, 0, 0, 0.5);
 }
@@ -161,6 +153,7 @@ form button {
     font-weight: bold;
     border-radius: 3px;
     margin-top: 24px;
+    cursor: pointer;
   }
 
   .confirmation-text {

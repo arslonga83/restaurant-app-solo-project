@@ -27,7 +27,7 @@ function getMenuHtml() {
       <h2 class="item-graphic">${item.emoji}</h2>
       <div class="item-details">
         <h3>${item.name}</h3>
-        <p>${item.ingredients.join(", ")}</p>
+        <p class="ingredients">${item.ingredients.join(", ")}</p>
         <h4>$${item.price}</h4>
       </div>
       <button class="add-item-btn" data-item=${item.id}>+</button>
@@ -88,10 +88,11 @@ function openPaymentModal() {
 
 function confirmOrder() {
   let name = document.querySelector('#order-name').value;
-  document.querySelector('#payment-modal').style.display = 'none'
+  document.querySelector('#payment-modal').style.display = 'none';
   document.querySelector('#order-container').innerHTML = `
     <h1 class='confirmation-text'>Thanks, ${name}! Your order is on its way!<h1>
-  `
+  `;
+  orderArray.length = 0; 
 }
 
 render();
