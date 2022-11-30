@@ -9,6 +9,9 @@ document.addEventListener('click', (e) => {
     deleteOrderItem(e.target.dataset.index)
   } else if (e.target.id === 'order-btn') {
     openPaymentModal();
+  } else if (e.target.id === 'submit-order') {
+    e.preventDefault();
+    confirmOrder();
   }
 })
 
@@ -68,17 +71,23 @@ function deleteOrderItem(itemIndex) {
 }
 
 function render() {
-  const menuContainer = document.querySelector('#menu-container');
-  menuContainer.innerHTML = getMenuHtml();
+  document.querySelector('#menu-container').innerHTML = getMenuHtml();
 }
 
 function renderOrder() {
-  const orderContainer = document.querySelector('#order-container')
-  orderContainer.innerHTML = getOrderHtml();
+  document.querySelector('#order-container').innerHTML = getOrderHtml();
 }
 
 function openPaymentModal() {
   document.querySelector('#payment-modal').style.display = 'flex'
+}
+
+function confirmOrder() {
+  let name = document.querySelector('#order-name').value;
+  document.querySelector('#payment-modal').style.display = 'none'
+  document.querySelector('#order-container').innerHTML = `
+    <h1 class='confirmation-text'>Thanks, ${name}! Your order is on its way!<h1>
+  `
 }
 
 
