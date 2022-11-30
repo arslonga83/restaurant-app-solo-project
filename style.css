@@ -43,8 +43,12 @@ main {
 }
 
 .item-details {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   line-height: 2rem;
+}
+
+p {
+  color: gray;  
 }
 
 .add-item-btn {
@@ -56,4 +60,42 @@ main {
   height: 48px;
   width: 48px;
   margin: 0 0 0 auto;
+}
+
+.order-container {
+  width: 600px;
+  text-align: center;
+  padding: 16px;
+  margin: 16px;
+}
+
+.order-title {
+  margin-bottom: 48px;
+}
+
+.order-line {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  padding-bottom: 8px;
+}
+
+.price {
+  margin: 0 0 0 auto;
+}
+
+.total-line {
+  padding-top: 8px;
+  border-top: 1px solid black;
+}
+
+.order-btn {
+  background: #16DB99;
+  color: #FFFFFF;
+  width: 600px;
+  padding: 16px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 3px;
+  margin-top: 24px;
 }

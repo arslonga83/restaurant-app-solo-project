@@ -1,0 +1,2 @@
+- fix ingredients render so there are spaces between each
+- draft out boilerplate for bottom order section
