@@ -23,6 +23,10 @@ header {
   font-size: 1.75rem;
 }
 
+.header-description {
+  color: #FFFFFF;
+}
+
 main {
   background: white;
   position: relative;

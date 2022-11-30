@@ -13,7 +13,7 @@
 <body>
   <header>
     <h1>Jimmy's Diner</h1>
-    <p>The best burgers and pizza in town.</p>
+    <p class="header-description">The best ramen and pizza in town.</p>
   </header>
   <main>
     <div id="menu-container">
@@ -25,13 +25,24 @@
     <div class="payment-modal" id="payment-modal">
       <h1>Enter card details</h1>
       <form>
-        <input type="text" id="order-name" placeholder="Enter your name">
-        <input type="text" id="order-card" placeholder="Enter card number">
-        <input type="text" id="order-cvv" placeholder="Enter CVV">
-        <button id="submit-order">Pay</button>
+        <input 
+          type="text" 
+          id="order-name" 
+          placeholder="Enter your name" 
+          required/>
+        <input 
+          type="number" 
+          id="order-card" 
+          placeholder="Enter card number" 
+          required/>
+        <input 
+          type="number" 
+          id="order-cvv" 
+          placeholder="Enter CVV" 
+          required/>
+        <button type="submit" id="submit-order">Pay</button>
       </form>
     </div>
   </main>
-
 </body>
 </html>

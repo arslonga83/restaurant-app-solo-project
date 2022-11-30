@@ -1,6 +1,7 @@
 import { menuArray } from '/data.js';
 
 const orderArray = [];
+const orderForm = document.querySelector('form');
 
 document.addEventListener('click', (e) => {
   if (e.target.dataset.item) {
@@ -9,10 +10,13 @@ document.addEventListener('click', (e) => {
     deleteOrderItem(e.target.dataset.index)
   } else if (e.target.id === 'order-btn') {
     openPaymentModal();
-  } else if (e.target.id === 'submit-order') {
-    e.preventDefault();
-    confirmOrder();
   }
+})
+
+// this listener needs to be separate...submit instead of click so required form validation will work
+orderForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  confirmOrder();
 })
 
 function getMenuHtml() {
@@ -36,7 +40,7 @@ function getMenuHtml() {
 function getOrderHtml() {
   let totalPrice = 0;
   // title line of order section
-  let orderHtml = `<h1 class="order-title">Your order</h1>`
+  let orderHtml = `<h1 class="order-title">Your order</h1>`;
   // add items from order array
   orderArray.forEach((item, index) => {
     orderHtml += `
@@ -55,19 +59,19 @@ function getOrderHtml() {
   </div>
   <button class="order-btn" id="order-btn">Complete order</button>
     `
-  return orderHtml
+  return orderHtml;
 }
 
 function addMenuItem(itemId) {
   orderArray.push(menuArray.filter((item) => {
     return item.id == itemId
-  })[0])
-  renderOrder()
+  })[0]);
+  renderOrder();
 }
 
 function deleteOrderItem(itemIndex) {
-  orderArray.splice(itemIndex, 1)
-  renderOrder()
+  orderArray.splice(itemIndex, 1);
+  renderOrder();
 }
 
 function render() {
@@ -79,7 +83,7 @@ function renderOrder() {
 }
 
 function openPaymentModal() {
-  document.querySelector('#payment-modal').style.display = 'flex'
+  document.querySelector('#payment-modal').style.display = 'flex';
 }
 
 function confirmOrder() {
@@ -90,5 +94,4 @@ function confirmOrder() {
   `
 }
 
-
-render()
+render();
