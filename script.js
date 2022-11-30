@@ -8,7 +8,6 @@ document.addEventListener('click', (e) => {
   }
 })
 
-
 function getMenuHtml() {
   let menuHtml = ''
   menuArray.forEach((item) => {
@@ -28,28 +27,29 @@ function getMenuHtml() {
 }
 
 function getOrderHtml() {
-  let orderHtml = ''
-  orderHtml = `
-      <h1 class="order-title">Your order</h1>
+  let totalPrice = 0;
+  // title line of order section
+  let orderHtml = `<h1 class="order-title">Your order</h1>`
+  // add items from order array
+  orderArray.forEach((item) => {
+    orderHtml += `
       <div class="order-line">
-        <h2>Pizza</h2>
+        <h2>${item.name}</h2>
         <p>remove</p>
-        <h2 class="price">$14</h2>
-      </div>
-      <div class="order-line">
-        <h2>Beer</h2>
-        <p>remove</p>
-        <h2 class="price">$12</h2>
-      </div>
-      <div class="order-line total-line">
-        <h2>Total price:</h2>
-        <h2 class="price">$12</h2>
-      </div>
-      <button class="order-btn">Complete order</button>
-  `
+        <h2 class="price">$${item.price}</h2>
+      </div>`
+      totalPrice += item.price
+    })
+    // add total price line and button
+    orderHtml += `
+    <div class="order-line total-line">
+    <h2>Total price:</h2>
+    <h2 class="price">$${totalPrice}</h2>
+  </div>
+  <button class="order-btn">Complete order</button>
+    `
   return orderHtml
 }
-
 
 function addMenuItem(itemId) {
   orderArray.push(menuArray.filter((item) => {
@@ -58,7 +58,6 @@ function addMenuItem(itemId) {
   console.log(orderArray)
   renderOrder()
 }
-
 
 function render() {
   const menuContainer = document.querySelector('#menu-container');
