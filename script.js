@@ -7,6 +7,8 @@ document.addEventListener('click', (e) => {
     addMenuItem(e.target.dataset.item)
   } else if (e.target.dataset.index) {
     deleteOrderItem(e.target.dataset.index)
+  } else if (e.target.id === 'order-btn') {
+    openPaymentModal();
   }
 })
 
@@ -48,7 +50,7 @@ function getOrderHtml() {
     <h2>Total price:</h2>
     <h2 class="price">$${totalPrice}</h2>
   </div>
-  <button class="order-btn">Complete order</button>
+  <button class="order-btn" id="order-btn">Complete order</button>
     `
   return orderHtml
 }
@@ -74,5 +76,10 @@ function renderOrder() {
   const orderContainer = document.querySelector('#order-container')
   orderContainer.innerHTML = getOrderHtml();
 }
+
+function openPaymentModal() {
+  document.querySelector('#payment-modal').style.display = 'inline-block'
+}
+
 
 render()

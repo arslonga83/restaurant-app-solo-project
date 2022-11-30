@@ -19,26 +19,5 @@ export const menuArray = [
       price: 12,
       emoji: "🍺",
       id: 2
-  },
-      {
-      name: "Tofu",
-      ingredients: ["soybeans, water, oil"],
-      price: 10,
-      emoji: "🥡",
-      id: 3
-  },
-      {
-      name: "Ramen",
-      ingredients: ["noodles, seasoning packet, water"],
-      price: 8,
-      emoji: "🍜",
-      id: 4
-  },
-      {
-      name: "Cake",
-      ingredients: ["chocolate, coconut, frosting"],
-      price: 5,
-      emoji: "🍰",
-      id: 5
   }
 ]
