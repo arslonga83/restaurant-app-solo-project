@@ -60,6 +60,11 @@ p {
   height: 48px;
   width: 48px;
   margin: 0 0 0 auto;
+  cursor:pointer;
+}
+
+.add-item-btn:hover {
+  background: lightgray;
 }
 
 .order-container {
@@ -78,6 +83,10 @@ p {
   gap: 16px;
   align-items: center;
   padding-bottom: 8px;
+}
+
+.remove-btn {
+  cursor: pointer;
 }
 
 .price {

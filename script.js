@@ -1,10 +1,13 @@
-import { menuArray } from '/data.js'
+import { menuArray } from '/data.js';
+import { v4 as uuidv4 } from 'https://jspm.dev/uuid';
 
 const orderArray = [];
 
 document.addEventListener('click', (e) => {
   if (e.target.dataset.item) {
     addMenuItem(e.target.dataset.item)
+  } else if (e.target.dataset.index) {
+    console.log(e.target.dataset.index)
   }
 })
 
@@ -31,11 +34,11 @@ function getOrderHtml() {
   // title line of order section
   let orderHtml = `<h1 class="order-title">Your order</h1>`
   // add items from order array
-  orderArray.forEach((item) => {
+  orderArray.forEach((item, index) => {
     orderHtml += `
       <div class="order-line">
         <h2>${item.name}</h2>
-        <p>remove</p>
+        <p class="remove-btn" data-index=${index}>remove</p>
         <h2 class="price">$${item.price}</h2>
       </div>`
       totalPrice += item.price
