@@ -9,7 +9,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: lightgrey
+  background: lightgrey;
 }
 
 header {
@@ -25,6 +25,7 @@ header {
 
 main {
   background: white;
+  height: 100vh;
 }
 
 .card {
