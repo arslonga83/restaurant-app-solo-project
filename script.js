@@ -18,7 +18,7 @@ function getMenuHtml() {
       <h2 class="item-graphic">${item.emoji}</h2>
       <div class="item-details">
         <h3>${item.name}</h3>
-        <p>${item.ingredients}</p>
+        <p>${item.ingredients.join(", ")}</p>
         <h4>$${item.price}</h4>
       </div>
       <button class="add-item-btn" data-item=${item.id}>+</button>
