@@ -1,5 +1,4 @@
 import { menuArray } from '/data.js';
-import { v4 as uuidv4 } from 'https://jspm.dev/uuid';
 
 const orderArray = [];
 
@@ -7,7 +6,7 @@ document.addEventListener('click', (e) => {
   if (e.target.dataset.item) {
     addMenuItem(e.target.dataset.item)
   } else if (e.target.dataset.index) {
-    console.log(e.target.dataset.index)
+    deleteOrderItem(e.target.dataset.index)
   }
 })
 
@@ -58,7 +57,11 @@ function addMenuItem(itemId) {
   orderArray.push(menuArray.filter((item) => {
     return item.id == itemId
   })[0])
-  console.log(orderArray)
+  renderOrder()
+}
+
+function deleteOrderItem(itemIndex) {
+  orderArray.splice(itemIndex, 1)
   renderOrder()
 }
 
